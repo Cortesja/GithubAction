@@ -1,15 +1,13 @@
-FROM maven:3.8-jdk-11 AS build
+FROM ubuntu:24.04
 
-WORKDIR /project
+RUN apt-get update && apt-get install -y nginx && \
+    ln -sf /dev/stdout /var/log/nginx/access.log && \
+    ln -sf /dev/stderr /var/log/nginx/error.log && \
+    rm -rf /var/lib/apt/lists/* && \
+    echo "\ndaemon off;" >> /etc/nginx/nginx.conf
 
-COPY ./javaapp/ /project
+COPY ./src/default /etc/nginx/sites-available/default
 
-RUN mvn clean package
+CMD ["nginx"]
 
-FROM openjdk:11-jre-slim
-
-WORKDIR /app
-
-COPY --from=build /project/target/helloworld-1.0-SNAPSHOT.jar ./
-
-CMD ["java", "-jar", "./helloworld-1.0-SNAPSHOT.jar"]
+EXPOSE 10443 10080
