@@ -6,6 +6,11 @@ refs:heads/main
 ### update 17:12
 GithubAction permissons changed to 
 
+### update 17:43
+GithubAction permissions, 
+added:
+"ecr:BatchGetImage"
+
 "Sid": "PushImage"
 . . . 
 "Resource": "<theURIfortheECRrepository>"
