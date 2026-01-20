@@ -31,5 +31,3 @@ jobs:
           push: true
           provenance: false
           tags: ${{ env.ECR_REGISTRY }}/sample-image-ecr:latest
-
-
