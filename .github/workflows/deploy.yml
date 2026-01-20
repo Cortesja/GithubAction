@@ -5,7 +5,11 @@ on:
     branches:
       - main
 
+permissions:
+  id-token: write
+  contents: read
+
 jobs:
-  build-and-push:
+  build_and_push:
     uses: ./.github/workflows/build.yml
     secrets: inherit
