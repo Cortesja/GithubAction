@@ -1,0 +1,8 @@
+netbox-acls==1.9.1
+netbox-floorplan-plugin==0.7.0
+netbox-qrcode==0.0.18
+netbox-reorder-rack==1.1.4
+netbox-secrets==2.3.4
+netbox-topology-views==4.3.0
+netboxlabs-netbox-branching==0.6.2
+slurpit_netbox==1.1.44
