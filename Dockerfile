@@ -6,6 +6,7 @@ USER root
 COPY plugin_requirments.txt /opt/netbox/plugin_requirements.txt
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-    /usr/local/bin/uv pip install -r /opt/netbox/plugin_requirements.txt
+    /usr/local/bin/uv pip install -r /opt/netbox/plugin_requirements.txt && \
+    /usr/local/bin/uv pip check
 
-USER netbox
+USER 101
