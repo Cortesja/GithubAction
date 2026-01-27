@@ -1,5 +1,5 @@
 ARG NETBOX_TAG=v4.3-3.3.0
-FROM netboxcommunity/netbox:${NETBOX_TAG}
+FROM --platform=linux/arm64 netboxcommunity/netbox:${NETBOX_TAG}
 
 USER root
 
