@@ -8,5 +8,3 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 
 COPY configuration/branching.py /etc/netbox/config/branching.py
 COPY configuration/plugins.py /etc/netbox/config/plugins.py
-RUN DEBUG="true" SECRET_KEY="dummydummydummydummydummydummydummydummydummydummy" \
-    /opt/netbox/venv/bin/python /opt/netbox/netbox/manage.py col electstatic --no-input
