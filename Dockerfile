@@ -6,7 +6,7 @@ USER root
 COPY plugin_requirements.txt /opt/netbox/plugin_requirements.txt
 
 RUN --mount=type=cache,target=/root/.cache/uv \
-      /usr/local/bin/uv pip install -f /opt/netbox/plugin_requirements.txt
+      /usr/local/bin/uv pip install -r /opt/netbox/plugin_requirements.txt
 
 # These lines are only required if your plugin has its own static files.
 COPY configuration/configuration.py /opt/netbox/netbox/netbox/configuration.py
