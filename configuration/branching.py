@@ -1,6 +1,8 @@
 import os
 from netbox_branching.utilities import DynamicSchemaDict
 
+DATABASE = None
+
 DATABASES = DynamicSchemaDict({
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
