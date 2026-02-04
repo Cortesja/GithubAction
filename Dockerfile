@@ -11,4 +11,4 @@ RUN --mount=type=cache,target=/root/.cache/uv \
 COPY configuration/branching.py /etc/netbox/config/branching.py
 COPY configuration/plugins.py /etc/netbox/config/plugins.py
 
-USER netbox
+USER 0
