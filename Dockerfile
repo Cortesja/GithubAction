@@ -1,4 +1,4 @@
-ARG NETBOX_TAG=v4.3-3.3.0
+ARG NETBOX_TAG=v4.4-3.4.2
 FROM --platform=linux/arm64 docker.io/netboxcommunity/netbox:${NETBOX_TAG}
 
 USER root
