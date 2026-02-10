@@ -387,3 +387,17 @@ TIME_ZONE = environ.get('TIME_ZONE', 'UTC')
 
 # If true disables miscellaneous functionality which depends on access to the Internet.
 ISOLATED_DEPLOYMENT = _environ_get_and_map('ISOLATED_DEPLOYMENT', 'False', _AS_BOOL)
+
+##################
+# S3 bucket setup
+##################
+
+STORAGES = {
+    'default': {
+        'BACKEND': 'storages.backends.s3.S3Storage',
+        'OPTIONS': {
+            'bucker_name': environ.get('AWS_STOREAGE_BUCKET_NAME'),
+            'location': 'media/',
+        }
+    }
+}
