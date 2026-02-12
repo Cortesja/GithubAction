@@ -392,12 +392,12 @@ ISOLATED_DEPLOYMENT = _environ_get_and_map('ISOLATED_DEPLOYMENT', 'False', _AS_B
 # S3 bucket setup
 ##################
 
-#STORAGES = {
-#    'default': {
-#        'BACKEND': 'storages.backends.s3.S3Storage',
-#        'OPTIONS': {
-#            'bucket_name': environ.get('AWS_STORAGE_BUCKET_NAME'),
-#            'location': 'media/',
-#        },
-#    },
-#}
+STORAGES = {
+    'default': {
+        'BACKEND': 'storages.backends.s3.S3Storage',
+        'OPTIONS': {
+            'bucket_name': environ.get('AWS_STORAGE_BUCKET_NAME'),
+            'location': 'media/',
+        },
+    },
+}
