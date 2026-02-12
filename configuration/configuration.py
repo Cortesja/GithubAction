@@ -396,8 +396,15 @@ STORAGES = {
     'default': {
         'BACKEND': 'storages.backends.s3.S3Storage',
         'OPTIONS': {
-            'bucker_name': environ.get('AWS_STOREAGE_BUCKET_NAME'),
+            'bucket_name': environ.get('AWS_STORAGE_BUCKET_NAME'),
             'location': 'media/',
-        }
-    }
+        },
+    },
+    'staticfiles': {
+        'BACKEND': 'storages.backends.s3.S3Storage',
+        'OPTIONS': {
+            'bucket_name': environ.get('AWS_STORAGE_BUCKET_NAME'),
+            'location': 'static/',
+        },
+    },
 }
